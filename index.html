@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JL Delícias em Camadas - Ficha Técnica</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="JL Delícias em Camadas" id="logo">
+    <h1>Controle de Receitas - JL Delícias em Camadas</h1>
+  </header>
+
+  <section id="ingredientes">
+    <h2>Ingredientes</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Peso Embalagem (g)</th>
+          <th>Qtd. na Receita (g)</th>
+          <th>Custo Embalagem (R$)</th>
+          <th>Preço na Receita (R$)</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="ingredientesBody"></tbody>
+    </table>
+    <button onclick="adicionarIngrediente()">+ Adicionar Ingrediente</button>
+  </section>
+
+  <section id="mao-de-obra">
+    <h2>Mão de Obra</h2>
+    <label>Salário mensal (R$): <input type="number" id="salario" min="0" step="any"></label>
+    <label>Dias trabalhados por mês: <input type="number" id="diasTrabalho" min="1" step="1"></label>
+    <label>Horas por dia: <input type="number" id="horasDia" min="1" step="any"></label>
+  </section>
+
+  <section id="despesas">
+    <h2>Despesas Fixas Mensais</h2>
+    <label>Aluguel: <input type="number" class="despesa" data-nome="Aluguel" min="0" step="any"></label>
+    <label>Energia: <input type="number" class="despesa" data-nome="Energia" min="0" step="any"></label>
+    <label>Água: <input type="number" class="despesa" data-nome="Água" min="0" step="any"></label>
+    <label>Internet: <input type="number" class="despesa" data-nome="Internet" min="0" step="any"></label>
+    <label>Escritório: <input type="number" class="despesa" data-nome="Escritório" min="0" step="any"></label>
+    <label>MEI: <input type="number" class="despesa" data-nome="Mei" min="0" step="any"></label>
+  </section>
+
+  <section id="resumo">
+    <h2>Resumo da Receita</h2>
+    <label>Rendimento (qtde): <input type="number" id="rendimento" min="0" step="any"></label>
+    <label>Tempo de Preparo (min): <input type="number" id="tempoPreparo" min="0" step="any"></label>
+    <label>Margem de Lucro (%): <input type="number" id="lucro" value="0" step="any"></label>
+    <button onclick="calcularTudo()">Calcular Totais</button>
+
+    <div id="resultados">
+      <p><strong>Custo dos Ingredientes:</strong> R$ <span id="custoIngredientes">0.00</span></p>
+      <p><strong>Custo da Mão de Obra:</strong> R$ <span id="custoMaoObra">0.00</span></p>
+      <p><strong>Despesas Fixas Rateadas:</strong> R$ <span id="custoDespesas">0.00</span></p>
+      <p><strong><u>Total da Receita (sem lucro):</u></strong> R$ <span id="valorTotal">0.00</span></p>
+      <p><strong><u>Valor Final com Lucro:</u></strong> R$ <span id="valorComLucro">0.00</span></p>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
